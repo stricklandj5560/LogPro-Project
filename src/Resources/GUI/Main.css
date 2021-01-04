@@ -1,0 +1,164 @@
+.mainBackground {
+
+	-fx-background-color: #363946;
+
+}
+
+.sideBar {
+
+	-fx-background-color: black;
+
+}
+
+.topBar {
+
+	-fx-background-color: #779DA8;
+	-fx-border-radius: 0px 50px 0px 0px;
+	-fx-background-radius: 0px 50px 0px 0px;
+
+}
+
+.curved {
+
+	-fx-border-radius: 0px 50px 30px 0px;
+	-fx-background-radius: 0px 50px 30px 0px;
+
+}
+
+.standardButton {
+
+	-fx-background-color: transparent;
+	-fx-border-color: white;
+	-fx-border-width: 2px;
+	-fx-text-fill: white;
+	
+}
+
+.standardButton:hover {
+
+	-fx-opacity: 0.5;
+
+}
+
+.blurPane {
+
+	-fx-background-color: black;
+	-fx-opacity: 0.5;
+
+}
+
+.standardText {
+
+	-fx-fill: white;
+
+}
+
+.standardTextBox {
+
+	-fx-border-radius: 15px;
+	-fx-text-fill: white;
+	-fx-background-color: transparent;
+
+}
+
+.standardListView {
+
+	-fx-background-color: #363946;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+	-fx-border-color: white;
+
+}
+
+.standardBarChart {
+
+	-fx-bar-gap: 10;
+	-fx-pie-label-visible: false;
+
+}
+
+
+.standardBarChart .chart-plot-background {
+
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-text-fill: white;
+
+}
+
+.curvedListViewBackground .list-view{
+
+	-fx-background-radius: 15px;
+	
+}
+
+.errorText {
+
+	-fx-fill: red;
+
+}
+
+.standardListView:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#328BDB 0%, #207BCF 25%, #1973C9 75%, #0A65BF 100%);
+    -fx-text-fill: white;
+}
+
+.standardListView .list-cell {
+    -fx-background-radius: 15px;
+
+}
+
+.standardListView .list-view {
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+.helpSearchResult {
+
+	-fx-background-radius: 15px;
+	-fx-border-radius: 15px;
+	
+
+}
+
+.helpSearchResult .list-cell {
+
+    -fx-border-color: black;
+
+}
+
+
+.default-color0.chart-bar { -fx-bar-fill: #779DA8; }
+.default-color1.chart-bar { -fx-bar-fill: red; }
+
+.data0.chart-bar {
+    -fx-bar-fill: #A1C7C8;
+}
+
+.data1.chart-bar {
+    -fx-background-color: #779DA8;
+}
+
+
+.helpPane {
+
+	-fx-background-color: #779DA8;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+
+}
+
+.text-area .scroll-pane {
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+.text-area .scroll-pane .content{
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}

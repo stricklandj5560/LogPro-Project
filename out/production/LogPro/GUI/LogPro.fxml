@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@Main.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Java.MainController">
+   <children>
+      <AnchorPane fx:id="mainScenePane" layoutX="128.0" prefHeight="600.0" prefWidth="873.0" styleClass="curved">
+         <children>
+            <AnchorPane fx:id="myHoursScene" prefHeight="600.0" prefWidth="873.0" styleClass="curved" visible="false">
+               <children>
+                  <Text fill="WHITE" layoutX="370.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Hours">
+                     <font>
+                        <Font name="Bodoni 72 Oldstyle Book" size="41.0" />
+                     </font>
+                  </Text>
+                  <Line endX="262.044921875" endY="-7.62939453125E-6" layoutX="418.0" layoutY="85.0" startX="-228.18475341796875" startY="-7.62939453125E-6" stroke="WHITE" />
+                  <ListView fx:id="studentLoggedHoursListView" layoutX="72.0" layoutY="164.0" onMouseClicked="#myHoursListViewClick" prefHeight="393.0" prefWidth="338.0" styleClass="standardListView" />
+                  <Text layoutX="166.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Logged Hours">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="myHoursTotalHoursTxtBox" alignment="TOP_CENTER" editable="false" layoutX="566.0" layoutY="193.0" styleClass="standardTextBox" />
+                  <Text layoutX="593.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Total Logged Hours" />
+                  <AnchorPane layoutX="469.0" layoutY="304.0" prefHeight="253.0" prefWidth="363.0" styleClass="standardListView">
+                     <children>
+                        <TextField fx:id="myHoursActivityTxtBox" alignment="CENTER" editable="false" layoutX="8.0" layoutY="44.0" prefHeight="27.0" prefWidth="345.0" styleClass="standardTextBox" />
+                        <Text layoutX="160.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Activity:" />
+                        <TextField fx:id="myHoursHoursEarnedTxtBox" alignment="CENTER" editable="false" layoutX="7.0" layoutY="116.0" prefHeight="27.0" prefWidth="345.0" styleClass="standardTextBox" />
+                        <Text layoutX="141.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Hours Earned:" />
+                        <Line endX="168.0" endY="3.0517578125E-5" layoutX="186.0" layoutY="71.0" startX="-177.0" startY="3.0517578125E-5" stroke="WHITE" />
+                        <Line endX="168.0" endY="3.0517578125E-5" layoutX="187.0" layoutY="144.0" startX="-177.0" startY="3.0517578125E-5" stroke="WHITE" />
+                        <TextField fx:id="myHoursContactTxtBox" alignment="CENTER" editable="false" layoutX="8.0" layoutY="188.0" prefHeight="27.0" prefWidth="345.0" styleClass="standardTextBox" />
+                        <Text layoutX="159.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Contact:" />
+                        <Line endX="168.0" endY="3.0517578125E-5" layoutX="188.0" layoutY="216.0" startX="-177.0" startY="3.0517578125E-5" stroke="WHITE" />
+                     </children>
+                  </AnchorPane>
+                  <Text layoutX="559.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Selected Activity">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Line endX="197.0" endY="-1.0" layoutX="536.0" layoutY="221.0" startX="30.0" startY="-1.0" stroke="WHITE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="logHoursScene" layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="873.0" styleClass="curved" visible="false">
+               <children>
+                  <Text fill="WHITE" layoutX="352.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log Hours">
+                     <font>
+                        <Font name="Bodoni 72 Oldstyle Book" size="41.0" />
+                     </font>
+                  </Text>
+                  <Line endX="262.044921875" endY="-7.62939453125E-6" layoutX="400.0" layoutY="81.0" startX="-228.18475341796875" startY="-7.62939453125E-6" stroke="WHITE" />
+                  <Text layoutX="238.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Activity">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextArea fx:id="logHoursExplanationTxtBox" layoutX="89.0" layoutY="344.0" prefHeight="126.0" prefWidth="679.0" style="-fx-background-radius: 15px; -fx-border-radius: 15px;" />
+                  <Text layoutX="299.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="What You Did / What You Learned">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="552.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Contact">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="367.0" layoutY="538.0" mnemonicParsing="false" onAction="#logHoursSubmitBtnClick" prefHeight="32.0" prefWidth="124.0" styleClass="standardButton" text="Submit" />
+                  <Text layoutX="214.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Hours/Minutes">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <DatePicker fx:id="logHoursDatePicker" layoutX="492.0" layoutY="234.0" styleClass="standardTextBox" />
+                  <Text layoutX="527.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Date Performed">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="logHoursHoursTxtBox" layoutX="177.0" layoutY="238.0" prefHeight="27.0" prefWidth="192.0" promptText="Format HH:MM" styleClass="standardTextBox" />
+                  <TextField fx:id="logHoursActivityTxtBox" layoutX="176.0" layoutY="130.0" prefHeight="27.0" prefWidth="192.0" styleClass="standardTextBox" />
+                  <Button layoutX="515.0" layoutY="129.0" mnemonicParsing="false" onAction="#logHoursAddContactBtnClick" prefHeight="17.0" prefWidth="138.0" style="-fx-border-radius: 15px; -fx-background-radius: 15px;" text="Add Contact">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Text fx:id="logHoursErrorTxt" layoutX="89.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="errorText" textAlignment="CENTER" wrappingWidth="678.9999976158142" />
+                  <Text fx:id="logHoursContactTxt" layoutX="509.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" textAlignment="CENTER" wrappingWidth="147.62335918869678" />
+                  <CheckBox fx:id="logHoursConfirmCheckBox" layoutX="260.0" layoutY="505.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="338.0" text="I confirm I have completed the hours listed above." textFill="WHITE" />
+                  <Text fill="RED" layoutX="590.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
+                  <Line endX="96.0" layoutX="272.0" layoutY="157.0" startX="-96.0" stroke="WHITE" />
+                  <Line endX="96.0" layoutX="273.0" layoutY="265.0" startX="-96.0" stroke="WHITE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="classroomScene" layoutX="18.0" prefHeight="601.0" prefWidth="854.0" styleClass="curved" visible="false">
+               <children>
+                  <Line endX="144.85894775390625" layoutX="440.0" layoutY="79.0" startX="-153.27169799804688" stroke="WHITE" />
+                  <Text layoutX="408.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Instructor:" />
+                  <TextField fx:id="classroomInstructorTxtBox" alignment="CENTER" editable="false" layoutX="356.0" layoutY="119.0" styleClass="standardTextBox" />
+                  <Line endX="78.644775390625" endY="3.0517578125E-5" layoutX="446.0" layoutY="146.0" startX="-89.99996948242188" startY="3.0517578125E-5" stroke="WHITE" />
+                  <BarChart fx:id="myAverageVrsClassAverageBarChart" layoutX="446.0" layoutY="191.0" prefHeight="407.0" prefWidth="363.0" styleClass="standardBarChart">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <Text fill="WHITE" layoutX="330.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Classroom">
+                     <font>
+                        <Font name="Bodoni 72 Oldstyle Book" size="41.0" />
+                     </font>
+                  </Text>
+                  <ListView fx:id="studentAwardsEarnedListView" layoutX="39.0" layoutY="209.0" onMouseClicked="#studentAwardsEarnedListViewClick" prefHeight="188.0" prefWidth="307.0" styleClass="standardListView" />
+                  <AnchorPane layoutX="43.0" layoutY="433.0" prefHeight="143.0" prefWidth="299.0" styleClass="standardListView">
+                     <children>
+                        <Text layoutX="102.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Hours Required" />
+                        <TextField fx:id="studentSelectedAwardHoursRequiredTxtBox" alignment="CENTER" editable="false" layoutX="98.0" layoutY="24.0" prefHeight="27.0" prefWidth="102.0" styleClass="standardTextBox" />
+                        <Line endX="50.0" layoutX="150.0" layoutY="51.0" startX="-52.0" stroke="WHITE" />
+                        <Text layoutX="114.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Description" />
+                        <TextArea fx:id="studentSelectedAwardDescriptionTxtBox" editable="false" layoutX="50.0" layoutY="89.0" prefHeight="43.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+                  <Text layoutX="128.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Selected Award Data" />
+                  <Text layoutX="146.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Awards Earned" />
+                  <Text fill="WHITE" layoutX="544.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Hours" />
+                  <Text fill="WHITE" layoutX="670.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Class Average" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sideBarPane" prefHeight="600.0" prefWidth="126.0" styleClass="sideBar">
+         <children>
+            <Text fill="WHITE" layoutX="8.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LogPro" wrappingWidth="90.93256378173828">
+               <font>
+                  <Font name="Bodoni 72 Oldstyle Book" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="6.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Community Service Tracker" wrappingWidth="135.20958698681875">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="35.0" fitWidth="45.0" layoutX="96.0" layoutY="10.0">
+               <image>
+                  <Image url="@book.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="14.0" layoutY="134.0" mnemonicParsing="false" onAction="#myHoursBtnClick" prefHeight="31.0" prefWidth="115.0" styleClass="standardButton" text="My Hours" />
+            <Button layoutX="13.0" layoutY="184.0" mnemonicParsing="false" onAction="#logHoursBtnClick" prefHeight="31.0" prefWidth="115.0" styleClass="standardButton" text="Log Hours" />
+            <Button layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#helpBtnClick" prefHeight="31.0" prefWidth="113.0" styleClass="standardButton" text="Help" />
+            <Button layoutX="12.0" layoutY="238.0" mnemonicParsing="false" onAction="#classroomBtnClick" prefHeight="31.0" prefWidth="115.0" styleClass="standardButton" text="Classroom" />
+            <Line endX="100.0" layoutX="46.0" layoutY="63.0" startX="-45.0450325012207" startY="-7.62939453125E-6" stroke="WHITE" />
+            <Button layoutX="35.0" layoutY="308.0" mnemonicParsing="false" onAction="#logOutBtnClick" styleClass="standardButton" text="Log Out" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="welcomeScene" layoutX="-1.0" prefHeight="600.0" prefWidth="1000.0" styleClass="curved" visible="false">
+         <children>
+            <AnchorPane layoutX="197.0" layoutY="70.0" prefHeight="452.0" prefWidth="736.0" styleClass="helpPane">
+               <children>
+                  <TextField fx:id="welcomeFirstNameTxtBox" layoutX="138.0" layoutY="142.0" prefHeight="27.0" prefWidth="197.0" />
+                  <Text layoutX="257.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Welcome!" textAlignment="CENTER" wrappingWidth="230.9153289794922">
+                     <font>
+                        <Font name="Bodoni 72 Oldstyle Book" size="50.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="288.0" layoutY="352.0" mnemonicParsing="false" onAction="#welcomeDoneBtnClick" prefHeight="31.0" prefWidth="170.0" styleClass="standardButton" text="Done" />
+                  <Text layoutX="302.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Tell us more about you." />
+                  <Text layoutX="207.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="First Name" />
+                  <TextField fx:id="welcomeLastNameTxtBox" layoutX="416.0" layoutY="142.0" prefHeight="27.0" prefWidth="197.0" />
+                  <Text layoutX="485.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Last Name" />
+                  <Text layoutX="160.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Join Classroom (Optional)" />
+                  <Text fx:id="welcomeErrorTxt" layoutX="99.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="errorText" textAlignment="CENTER" wrappingWidth="554.1138305664062">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="welcomeClassroomTxtBox" layoutX="135.0" layoutY="239.0" prefHeight="27.0" prefWidth="197.0" promptText="Enter Class Code" />
+                  <ComboBox fx:id="welcomeGradeComboBox" layoutX="418.0" layoutY="239.0" prefHeight="27.0" prefWidth="198.0" />
+                  <Text layoutX="498.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Grade" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="addContactPane" layoutX="212.0" layoutY="120.0" prefHeight="365.0" prefWidth="682.0" styleClass="helpPane" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="-2.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Contact" textAlignment="CENTER" wrappingWidth="678.9999976158142">
+               <font>
+                  <Font size="42.0" />
+               </font>
+            </Text>
+            <Button layoutX="29.0" layoutY="23.0" mnemonicParsing="false" onAction="#addContactCancelBtnClick" styleClass="standardButton" text="Cancel" />
+            <TextField fx:id="addContactNameTxtBox" layoutX="246.0" layoutY="125.0" styleClass="standardTextBox" />
+            <Line endX="82.80709838867188" layoutX="332.0" layoutY="151.0" startX="-81.43594360351562" stroke="WHITE" />
+            <Line endX="82.80709838867188" layoutX="189.0" layoutY="261.0" startX="-81.43594360351562" stroke="WHITE" visible="false" />
+            <TextField fx:id="addContactPhoneNumberTxtBox" layoutX="108.0" layoutY="232.0" styleClass="standardTextBox" visible="false" />
+            <Text layoutX="255.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Name/Organization">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="132.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Phone Number" visible="false">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="325.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Or" visible="false" />
+            <Line endX="82.80709838867188" layoutX="332.0" layoutY="258.0" startX="-81.43594360351562" stroke="WHITE" />
+            <TextField fx:id="addContactEmailAddrTxtBox" layoutX="251.0" layoutY="229.0" styleClass="standardTextBox" />
+            <Text layoutX="272.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Email Address">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Button layoutX="295.0" layoutY="314.0" mnemonicParsing="false" onAction="#addContactSubmitBtnClick" styleClass="standardButton" text="Submit" />
+            <Text fx:id="addContactErrorTxt" layoutX="84.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="errorText" textAlignment="CENTER" wrappingWidth="484.6001954766926">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="noClassroomPane" layoutX="212.0" layoutY="123.0" prefHeight="365.0" prefWidth="682.0" styleClass="helpPane" visible="false">
+         <children>
+            <Text fx:id="noClassroomErrorTxt" layoutX="105.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="errorText" textAlignment="CENTER" wrappingWidth="484.6001863479614" />
+            <Text fill="WHITE" layoutX="44.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No Classroom Detected" textAlignment="CENTER" wrappingWidth="607.5559346987047">
+               <font>
+                  <Font size="42.0" />
+               </font>
+            </Text>
+            <Button layoutX="316.0" layoutY="312.0" mnemonicParsing="false" onAction="#noClassroomCancelBtnClick" styleClass="standardButton" text="Cancel" />
+            <Button layoutX="290.0" layoutY="220.0" mnemonicParsing="false" onAction="#noClassroomJoinClassroomBtnClick" styleClass="standardButton" text="Join Classroom" />
+            <TextField fx:id="noClassroomClassroomTxtBox" layoutX="246.0" layoutY="161.0" prefHeight="30.0" prefWidth="204.0" />
+            <Line endX="100.0" layoutX="348.0" layoutY="191.0" startX="-100.0" stroke="WHITE" />
+            <Text layoutX="294.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Classroom Code" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="instructorSidePane" prefHeight="600.0" prefWidth="126.0" styleClass="sideBar" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="8.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LogPro" wrappingWidth="90.93256378173828">
+               <font>
+                  <Font name="Bodoni 72 Oldstyle Book" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="6.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Community Service Tracker" wrappingWidth="135.20958698681875">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="35.0" fitWidth="45.0" layoutX="96.0" layoutY="10.0">
+               <image>
+                  <Image url="@book.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="14.0" layoutY="134.0" mnemonicParsing="false" onAction="#manageBtnClick" prefHeight="31.0" prefWidth="115.0" styleClass="standardButton" text="Manage Hours" />
+            <Button layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#helpBtnClick" prefHeight="31.0" prefWidth="113.0" styleClass="standardButton" text="Help" />
+            <Button layoutX="13.0" layoutY="186.0" mnemonicParsing="false" onAction="#instructorClassroomBtnClick" prefHeight="31.0" prefWidth="115.0" styleClass="standardButton" text="My Classroom" />
+            <Line endX="100.0" layoutX="46.0" layoutY="63.0" startX="-45.0450325012207" startY="-7.62939453125E-6" stroke="WHITE" />
+            <Button layoutX="35.0" layoutY="241.0" mnemonicParsing="false" onAction="#logOutBtnClick" styleClass="standardButton" text="Log Out" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainInstructorPane" layoutX="147.0" prefHeight="602.0" prefWidth="851.0" styleClass="curved" visible="false">
+         <children>
+            <AnchorPane fx:id="manageStudentsPane" prefHeight="600.0" prefWidth="855.0" visible="false">
+               <children>
+                  <Text fill="WHITE" layoutX="217.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select A Student To Manage">
+                     <font>
+                        <Font name="Bodoni 72 Oldstyle Book" size="41.0" />
+                     </font>
+                  </Text>
+                  <Line endX="571.4999389648438" endY="-2.6702880859375E-5" layoutX="282.0" layoutY="63.0" startX="-282.0559387207031" startY="-2.288818359375E-5" stroke="WHITE" />
+                  <ListView fx:id="manageStudentsStudentListView" layoutX="27.0" layoutY="91.0" onMouseClicked="#manageStudentsListViewClick" prefHeight="188.0" prefWidth="363.0" styleClass="standardListView" />
+                  <Text layoutX="452.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Selected Student" />
+                  <TextField fx:id="manageStudentsSelectedStudentTxtBox" editable="false" layoutX="421.0" layoutY="119.0" styleClass="standardTextBox" />
+                  <Line endX="83.99993896484375" endY="3.0517578125E-5" layoutX="504.0" layoutY="145.0" startX="-83.00006103515625" startY="3.0517578125E-5" stroke="WHITE" />
+                  <Text layoutX="664.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Hours Logged" />
+                  <TextField fx:id="manageStudentsTotalHoursTxtBox" editable="false" layoutX="625.0" layoutY="118.0" styleClass="standardTextBox" />
+                  <Line endX="83.99993896484375" endY="3.0517578125E-5" layoutX="708.0" layoutY="145.0" startX="-83.00006103515625" startY="3.0517578125E-5" stroke="WHITE" />
+                  <Line endX="565.0" layoutX="289.0" layoutY="300.0" startX="-288.0" stroke="WHITE" />
+                  <Button layoutX="511.0" layoutY="250.0" mnemonicParsing="false" onAction="#manageStudentsViewDetailedReportBtnClick" styleClass="standardButton" text="View Detailed Hours Report" />
+                  <ListView fx:id="manageStudentsHoursListView" layoutX="29.0" layoutY="352.0" onMouseClicked="#manageStudentsHoursListClick" prefHeight="214.0" prefWidth="363.0" styleClass="standardListView" />
+                  <Text fill="WHITE" layoutX="183.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Students" />
+                  <Text layoutX="493.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Contact" />
+                  <TextField fx:id="manageStudentsContactTxtBox" editable="false" layoutX="437.0" layoutY="363.0" styleClass="standardTextBox" />
+                  <Line endX="83.99993896484375" endY="3.0517578125E-5" layoutX="520.0" layoutY="389.0" startX="-83.00006103515625" startY="3.0517578125E-5" stroke="WHITE" />
+                  <Text layoutX="682.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Hours Earned" />
+                  <TextField fx:id="manageStudentsHoursEarnedTxtBox" editable="false" layoutX="641.0" layoutY="362.0" styleClass="standardTextBox" />
+                  <Line endX="83.99993896484375" endY="3.0517578125E-5" layoutX="724.0" layoutY="389.0" startX="-83.00006103515625" startY="3.0517578125E-5" stroke="WHITE" />
+                  <TextArea fx:id="manageStudentsReflectionTxtBox" editable="false" layoutX="440.0" layoutY="429.0" prefHeight="109.0" prefWidth="371.0" />
+                  <Text layoutX="564.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Student Reflection" />
+                  <Text layoutX="171.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Logged Hours" />
+                  <Button layoutX="477.0" layoutY="553.0" mnemonicParsing="false" onAction="#manageStudentsRemoveHoursBtnClick" style="-fx-text-fill: red;" styleClass="standardButton" text="Remove Hours" />
+                  <Button layoutX="672.0" layoutY="552.0" mnemonicParsing="false" onAction="#manageStudentsApproveBtnClick" style="-fx-text-fill: lime;" styleClass="standardButton" text="Approve Hours" />
+                  <Text layoutX="104.0" layoutY="583.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Key: NA = Not Approved, APR = Approved." textAlignment="CENTER">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="582.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Grade:" />
+                  <TextField fx:id="manageStudentsGradeTxtBox" alignment="CENTER" editable="false" layoutX="565.0" layoutY="194.0" prefHeight="27.0" prefWidth="74.0" styleClass="standardTextBox" />
+                  <Line endX="31.0" endY="1.0" layoutX="608.0" layoutY="220.0" startX="-43.0" startY="1.0" stroke="WHITE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="instructorClassroomScene" layoutX="-2.0" prefHeight="600.0" prefWidth="858.0" styleClass="curved" visible="false">
+               <children>
+                  <Text fill="WHITE" layoutX="320.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Classroom">
+                     <font>
+                        <Font name="Bodoni 72 Oldstyle Book" size="41.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="350.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Class Code:" />
+                  <TextField fx:id="instructorClassCodeTxtBox" layoutX="419.0" layoutY="52.0" prefHeight="27.0" prefWidth="126.0" styleClass="standardTextBox" />
+                  <Line endX="725.9999389648438" layoutX="135.0" layoutY="80.0" startX="-132.00003051757812" stroke="WHITE" />
+                  <Button fx:id="instructorClassroomSwitchBtn" layoutX="338.0" layoutY="90.0" mnemonicParsing="false" onAction="#instructorClassroomSwitchBtnClick" style="-fx-background-color: #A1C7C8;" styleClass="standardButton" text="Classroom" />
+                  <Button fx:id="instructorAwardsSwitchBtn" layoutX="423.0" layoutY="90.0" mnemonicParsing="false" onAction="#instructorAwardsSwitchBtnClick" prefHeight="31.0" prefWidth="87.0" styleClass="standardButton" text="Awards" />
+                  <ListView fx:id="instructorManageClassroomsUsersListView" layoutX="47.0" layoutY="167.0" onMouseClicked="#instructorManageClassroomsUsersListViewClick" prefHeight="188.0" prefWidth="307.0" styleClass="standardListView" />
+                  <Text layoutX="173.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Students" />
+                  <BarChart fx:id="instructorManageClassroomBarChart" layoutX="419.0" layoutY="156.0" prefHeight="433.0" prefWidth="420.0" styleClass="standardBarChart">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <ListView fx:id="instructorManageClassroomSelectedUserAwardsListView" layoutX="48.0" layoutY="397.0" prefHeight="188.0" prefWidth="307.0" style="-fx-border-radius: 15px; -fx-background-radius: 15px;" styleClass="curvedListViewBackground" />
+                  <Text layoutX="90.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Awards Earned By Selected Student" />
+                  <Text layoutX="488.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Selected Student's Hours             Class Average" wrappingWidth="345.8260361532858" />
+                  <AnchorPane fx:id="instructorClassroomAwardScene" layoutX="2.0" layoutY="123.0" prefHeight="475.0" prefWidth="854.0" visible="false">
+                     <children>
+                        <Text layoutX="119.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Awards" />
+                        <ListView fx:id="instructorAwardsListView" layoutX="13.0" layoutY="33.0" onMouseClicked="#instructorAwardsListViewClick" prefHeight="230.0" prefWidth="257.0" styleClass="standardListView" />
+                        <AnchorPane layoutX="311.0" layoutY="303.0" prefHeight="143.0" prefWidth="522.0" styleClass="standardListView">
+                           <children>
+                              <TextField fx:id="instructorCreateAwardTitleTxtBox" layoutX="43.0" layoutY="35.0" styleClass="standardTextBox" />
+                              <Text layoutX="110.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Title" />
+                              <TextField fx:id="instructorCreateAwardHoursRequiredTxtBox" layoutX="43.0" layoutY="98.0" styleClass="standardTextBox" />
+                              <Text layoutX="76.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Required Hours" />
+                              <TextArea fx:id="instructorCreateAwardDescriptionTxtBox" layoutX="257.0" layoutY="34.0" prefHeight="42.0" prefWidth="234.0" text="&#10;" />
+                              <Text layoutX="339.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Description" />
+                              <Button layoutX="322.0" layoutY="97.0" mnemonicParsing="false" onAction="#instructorCreateAwardBtnClick" styleClass="standardButton" text="Create Award" />
+                              <Line endX="87.00006103515625" layoutX="123.0" layoutY="62.0" startX="-80.00003051757812" stroke="WHITE" />
+                              <Line endX="87.00006103515625" layoutX="123.0" layoutY="126.0" startX="-80.00003051757812" stroke="WHITE" />
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="533.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Create Award" />
+                        <Line endX="-75.249267578125" layoutX="384.0" layoutY="147.0" startX="-113.99996948242188" stroke="WHITE" />
+                        <ListView fx:id="instructorUsersAwardsListView" layoutX="309.0" layoutY="33.0" onMouseClicked="#usersAwardEarnedListViewClick" prefHeight="230.0" prefWidth="249.0" styleClass="standardListView" />
+                        <Text layoutX="341.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Users Who Have Earned Award" />
+                        <AnchorPane layoutX="16.0" layoutY="290.0" prefHeight="133.0" prefWidth="257.0" styleClass="standardListView">
+                           <children>
+                              <Text layoutX="84.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Hours Required" />
+                              <Text layoutX="95.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Description" />
+                              <TextField fx:id="instructorSelectedAwardHoursRequiredTxtBox" alignment="CENTER" layoutX="80.0" layoutY="25.0" prefHeight="27.0" prefWidth="102.0" styleClass="standardTextBox" />
+                              <Line endX="53.0" layoutX="129.0" layoutY="52.0" startX="-48.99998474121094" stroke="WHITE" />
+                              <TextArea fx:id="instructorSelectedAwardDescriptionTxtBox" layoutX="13.0" layoutY="81.0" prefHeight="42.0" prefWidth="234.0" />
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="29.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Selected Award" textAlignment="CENTER" wrappingWidth="234.47848935151592" />
+                        <AnchorPane layoutX="597.0" layoutY="32.0" prefHeight="234.0" prefWidth="234.0" styleClass="standardListView">
+                           <children>
+                              <Text layoutX="100.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Name" />
+                              <TextField fx:id="instructorAwardsSelectedStudentNameTxtBox" alignment="CENTER" editable="false" layoutX="11.0" layoutY="33.0" prefHeight="27.0" prefWidth="214.0" styleClass="standardTextBox" />
+                              <Line endX="107.00006103515625" endY="-1.52587890625E-5" layoutX="118.0" layoutY="60.0" startX="-107.0" startY="-1.52587890625E-5" stroke="WHITE" />
+                              <Text layoutX="59.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Total Hours Logged" />
+                              <TextField fx:id="instructorAwardHoursLoggedTxtBox" alignment="CENTER" editable="false" layoutX="62.0" layoutY="181.0" prefHeight="27.0" prefWidth="124.0" styleClass="standardTextBox" />
+                              <Line endX="68.0" layoutX="118.0" layoutY="208.0" startX="-65.5208740234375" stroke="WHITE" />
+                              <Text layoutX="57.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Grade" textAlignment="CENTER" wrappingWidth="123.60632221527749" />
+                              <TextField fx:id="instructorAwardGradeTxtBox" alignment="CENTER" editable="false" layoutX="62.0" layoutY="104.0" prefHeight="27.0" prefWidth="124.0" styleClass="standardTextBox" />
+                              <Line endX="68.0" layoutX="118.0" layoutY="131.0" startX="-65.5208740234375" stroke="WHITE" />
+                           </children>
+                        </AnchorPane>
+                        <Line endX="-75.249267578125" layoutX="671.0" layoutY="148.0" startX="-113.99996948242188" stroke="WHITE" />
+                        <Text layoutX="665.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Selected Student" />
+                        <Button layoutX="28.0" layoutY="430.0" mnemonicParsing="false" onAction="#instructorRemoveAwardBtnClick" style="-fx-text-fill: red;" styleClass="standardButton" text="Remove Award" />
+                        <Button layoutX="154.0" layoutY="430.0" mnemonicParsing="false" onAction="#instructorUpdateAwardBtnClick" styleClass="standardButton" text="Update Award" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="curved" />
+                        <String fx:value="mainBackground" />
+                     </styleClass>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+      <AnchorPane fx:id="instructorWelcomeScene" layoutX="9.0" layoutY="10.0" prefHeight="600.0" prefWidth="1000.0" styleClass="curved" visible="false">
+         <children>
+            <AnchorPane layoutX="169.0" layoutY="71.0" prefHeight="452.0" prefWidth="736.0" styleClass="helpPane">
+               <children>
+                  <TextField fx:id="instructorWelcomeFirstNameTxtBox" layoutX="138.0" layoutY="142.0" prefHeight="27.0" prefWidth="197.0" />
+                  <Text layoutX="257.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Welcome!" textAlignment="CENTER" wrappingWidth="230.9153289794922">
+                     <font>
+                        <Font name="Bodoni 72 Oldstyle Book" size="50.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="288.0" layoutY="352.0" mnemonicParsing="false" onAction="#instructorWelcomeDoneBtnClick" prefHeight="31.0" prefWidth="170.0" styleClass="standardButton" text="Done" />
+                  <Text layoutX="302.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Tell us more about you." />
+                  <Text layoutX="207.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="First Name" />
+                  <TextField fx:id="instructorWelcomeLastNameTxtBox" layoutX="416.0" layoutY="142.0" prefHeight="27.0" prefWidth="197.0" />
+                  <Text layoutX="485.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Last Name" />
+                  <Text layoutX="225.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Create Classroom" />
+                  <Text fx:id="instructorWelcomeErrorTxt" layoutX="99.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="errorText" textAlignment="CENTER" wrappingWidth="554.1138305664062">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="instructorWelcomeClassroomTxtBox" layoutX="178.0" layoutY="243.0" prefHeight="26.0" prefWidth="197.0" promptText="Enter Class Code" />
+                  <Button layoutX="397.0" layoutY="240.0" mnemonicParsing="false" onAction="#instructorWelcomeGenerateClassCodeBtnClick" prefHeight="19.0" prefWidth="115.0" styleClass="standardButton" text="Generate Code" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="adminScenePane" layoutX="147.0" prefHeight="601.0" prefWidth="854.0" styleClass="curved" visible="false">
+         <children>
+            <AnchorPane fx:id="adminClassroomsScene" layoutX="-2.0" prefHeight="599.0" prefWidth="856.0" visible="false">
+               <children>
+                  <Text fill="WHITE" layoutX="267.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Classrooms">
+                     <font>
+                        <Font name="Bodoni 72 Oldstyle Book" size="41.0" />
+                     </font>
+                  </Text>
+                  <Line endX="190.8109130859375" endY="-3.814697265625E-6" layoutX="420.0" layoutY="63.0" startX="-194.70013427734375" startY="-3.814697265625E-6" stroke="WHITE" />
+                  <ListView fx:id="adminManageClassroomListView" layoutX="71.0" layoutY="132.0" onMouseClicked="#adminManageClassroomsListViewClick" prefHeight="383.0" prefWidth="330.0" styleClass="standardListView" />
+                  <Text layoutX="174.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Classrooms">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <ListView fx:id="adminSelectedClassroomUserListView" layoutX="499.0" layoutY="377.0" prefHeight="132.0" prefWidth="330.0" styleClass="standardListView" />
+                  <Button layoutX="586.0" layoutY="520.0" mnemonicParsing="false" onAction="#adminManageRemoveSelectedUserBtnClick" style="-fx-text-fill: red;" styleClass="standardButton" text="Remove Selected User" />
+                  <AnchorPane layoutX="499.0" layoutY="133.0" prefHeight="163.0" prefWidth="330.0" styleClass="standardListView">
+                     <children>
+                        <Text layoutX="129.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Class Code" />
+                        <TextField fx:id="adminSelectedClassroomClassCodeTxtBox" alignment="CENTER" layoutX="80.0" layoutY="38.0" styleClass="standardTextBox" />
+                        <Line endX="83.0" endY="-1.52587890625E-5" layoutX="164.0" layoutY="65.0" startX="-84.0" startY="-1.52587890625E-5" stroke="WHITE" />
+                        <Text layoutX="134.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Instructor" />
+                        <TextField fx:id="adminSelectedClassroomInstructorTxtBox" editable="false" layoutX="85.0" layoutY="110.0" styleClass="standardTextBox" />
+                        <Line endX="83.0" endY="-1.52587890625E-5" layoutX="169.0" layoutY="137.0" startX="-84.0" startY="-1.52587890625E-5" stroke="WHITE" />
+                     </children>
+                  </AnchorPane>
+                  <Text layoutX="565.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Selected Classroom">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="520.0" layoutY="305.0" mnemonicParsing="false" onAction="#adminManageClassroomsUpdateClassroomBtnClick" styleClass="standardButton" text="Update Classroom" />
+                  <Button layoutX="672.0" layoutY="305.0" mnemonicParsing="false" onAction="#adminManageClassroomsRemoveClassroomBtnClick" style="-fx-text-fill: red;" styleClass="standardButton" text="Remove Classroom" />
+                  <Text layoutX="645.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Users" />
+                  <Line endX="64.99993896484375" endY="1.52587890625E-5" layoutX="435.0" layoutY="214.0" startX="-33.0" startY="1.52587890625E-5" stroke="WHITE" />
+                  <Line endX="65.99993896484375" layoutX="433.0" layoutY="443.0" startX="-33.0" startY="1.52587890625E-5" stroke="WHITE" />
+                  <TextField layoutX="69.0" layoutY="517.0" prefHeight="27.0" prefWidth="330.0" promptText="Search..." styleClass="standardTextBox" visible="false" />
+                  <Line endX="174.0" layoutX="225.0" layoutY="544.0" startX="-155.99998474121094" stroke="WHITE" visible="false" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="adminUsersScene" layoutX="1.0" layoutY="1.0" prefHeight="599.0" prefWidth="856.0" visible="false">
+               <children>
+                  <Text fill="WHITE" layoutX="316.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Users">
+                     <font>
+                        <Font name="Bodoni 72 Oldstyle Book" size="41.0" />
+                     </font>
+                  </Text>
+                  <Line endX="141.8128662109375" endY="-3.814697265625E-6" layoutX="416.0" layoutY="62.0" startX="-138.43917846679688" startY="-3.814697265625E-6" stroke="WHITE" />
+                  <ListView fx:id="adminManageUsersUsersListView" layoutX="41.0" layoutY="155.0" onMouseClicked="#adminManageUsersUsersListViewClick" prefHeight="355.0" prefWidth="360.0" styleClass="standardListView" />
+                  <Text layoutX="191.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Users">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="adminManageUsersUsersSearchTxtBox" layoutX="43.0" layoutY="523.0" onKeyTyped="#adminManageUsersUpdateSearch" prefHeight="27.0" prefWidth="360.0" promptText="Search..." styleClass="standardTextBox" />
+                  <Line endX="181.99993896484375" endY="-1.0" layoutX="221.0" layoutY="551.0" startX="-178.0" startY="-1.0" stroke="WHITE" />
+                  <AnchorPane layoutX="456.0" layoutY="127.0" prefHeight="383.0" prefWidth="349.0" styleClass="standardListView">
+                     <children>
+                        <Text layoutX="131.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Selected User" />
+                        <TextField fx:id="adminManageUsersSelectedUserTxtBox" alignment="CENTER" editable="false" layoutX="90.0" layoutY="35.0" styleClass="standardTextBox" />
+                        <Line endX="82.0" endY="-1.52587890625E-5" layoutX="175.0" layoutY="62.0" startX="-85.0" startY="-1.52587890625E-5" stroke="WHITE" />
+                        <Text layoutX="131.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="First/Last Name" />
+                        <TextField fx:id="adminManageUsersFirstNameTxtBox" layoutX="30.0" layoutY="104.0" prefHeight="27.0" prefWidth="137.0" styleClass="standardTextBox" />
+                        <Line endX="51.0" layoutX="116.0" layoutY="131.0" startX="-85.0" startY="-1.52587890625E-5" stroke="WHITE" />
+                        <Text layoutX="143.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Classroom" />
+                        <TextField fx:id="adminManageUsersClassroomTxtBox" alignment="CENTER" layoutX="93.0" layoutY="173.0" styleClass="standardTextBox" />
+                        <Line endX="82.0" endY="-1.52587890625E-5" layoutX="178.0" layoutY="200.0" startX="-85.0" startY="-1.52587890625E-5" stroke="WHITE" />
+                        <Line endX="171.0" layoutX="179.0" layoutY="265.0" startX="-178.0" stroke="WHITE" />
+                        <Text fill="WHITE" layoutX="119.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Password?" />
+                        <Text layoutX="53.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="New Password" />
+                        <TextField fx:id="adminManageUsersNewPasswordTxtBox" layoutX="28.0" layoutY="317.0" prefHeight="27.0" prefWidth="141.0" styleClass="standardTextBox" />
+                        <Line endX="56.0" layoutX="113.0" layoutY="344.0" startX="-85.0" startY="-1.52587890625E-5" stroke="WHITE" />
+                        <Text layoutX="199.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Confirm Password" />
+                        <TextField fx:id="adminManageUsersConfirmNewPasswordTxtBox" layoutX="188.0" layoutY="317.0" prefHeight="27.0" prefWidth="141.0" styleClass="standardTextBox" />
+                        <Line endX="56.0" layoutX="273.0" layoutY="344.0" startX="-85.0" startY="-1.52587890625E-5" stroke="WHITE" />
+                        <TextField fx:id="adminManageUsersLastNameTxtBox" layoutX="188.0" layoutY="104.0" prefHeight="27.0" prefWidth="137.0" styleClass="standardTextBox" />
+                        <Line endX="51.0" layoutX="274.0" layoutY="131.0" startX="-85.0" startY="-1.52587890625E-5" stroke="WHITE" />
+                     </children>
+                  </AnchorPane>
+                  <Line endX="29.0" layoutX="428.0" layoutY="299.0" startX="-26.0" stroke="WHITE" />
+                  <Button layoutX="514.0" layoutY="536.0" mnemonicParsing="false" onAction="#adminManageUsersRemoveUserBtnClick" style="-fx-text-fill: red;" styleClass="standardButton" text="Remove User" textFill="RED" />
+                  <Button layoutX="659.0" layoutY="536.0" mnemonicParsing="false" onAction="#adminManageUsersUpdateUserBtnClick" styleClass="standardButton" text="Update User" />
+                  <Text layoutX="581.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Edit User">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="adminManageUsersUserTypeComboBox" layoutX="130.0" layoutY="121.0" onAction="#adminManageUsersUserTypeUpdate" prefHeight="27.0" prefWidth="191.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="adminSettingsScene" layoutX="2.0" layoutY="1.0" prefHeight="599.0" prefWidth="856.0" visible="false">
+               <children>
+                  <Line endX="140.65447998046875" endY="-3.814697265625E-6" layoutX="426.0" layoutY="70.0" startX="-146.17620849609375" startY="-3.814697265625E-6" stroke="WHITE" />
+                  <Text fill="WHITE" layoutX="310.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Settings">
+                     <font>
+                        <Font name="Bodoni 72 Oldstyle Book" size="41.0" />
+                     </font>
+                  </Text>
+                  <ListView fx:id="adminSettingsListView" layoutX="-1.0" layoutY="118.0" onMouseClicked="#adminSettingsListViewClick" prefHeight="481.0" prefWidth="319.0" />
+                  <Line endX="720.0" endY="-2.288818359375E-5" layoutX="136.0" layoutY="118.0" startX="-132.99996948242188" startY="-2.288818359375E-5" stroke="WHITE" />
+                  <AnchorPane fx:id="adminChangePasswordScene" layoutX="333.0" layoutY="118.0" prefHeight="481.0" prefWidth="505.0" visible="false">
+                     <children>
+                        <Text layoutX="148.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Change Password">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Text>
+                        <Line endX="106.01806640625" layoutX="243.0" layoutY="53.0" startX="-100.0" stroke="WHITE" />
+                        <Text layoutX="199.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="New Password" />
+                        <TextField fx:id="adminChangePasswordNewPasswordTxtBox" layoutX="163.0" layoutY="156.0" styleClass="standardTextBox" />
+                        <Line endX="83.0" endY="-3.0517578125E-5" layoutX="247.0" layoutY="183.0" startX="-83.99993896484375" startY="-3.0517578125E-5" stroke="WHITE" />
+                        <Text layoutX="192.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Confirm Password" />
+                        <TextField fx:id="adminChangePasswordConfirmPasswordTxtBox" layoutX="164.0" layoutY="275.0" styleClass="standardTextBox" />
+                        <Line endX="83.0" endY="-3.0517578125E-5" layoutX="248.0" layoutY="302.0" startX="-83.99993896484375" startY="-3.0517578125E-5" stroke="WHITE" />
+                        <Button layoutX="176.0" layoutY="377.0" mnemonicParsing="false" onAction="#adminChangePasswordBtnClick" styleClass="standardButton" text="Change Password" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="adminBackupSettingsPane" layoutX="329.0" layoutY="122.0" prefHeight="477.0" prefWidth="518.0">
+                     <children>
+                        <Text layoutX="178.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Backup Settings">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Text>
+                        <Line endX="116.96429443359375" endY="-1.52587890625E-5" layoutX="266.0" layoutY="46.0" startX="-118.55267333984375" startY="-1.52587890625E-5" stroke="WHITE" />
+                        <Text layoutX="81.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Note: Backups are performed daily. Restoring backups can not be undone. Upon restoring a backup, the current data that is not backed up will be lost." textAlignment="CENTER" wrappingWidth="357.09185791015625" />
+                        <Button layoutX="181.0" layoutY="169.0" mnemonicParsing="false" onAction="#adminPerformManualBackupBtnClick" styleClass="standardButton" text="Perform Manual Backup" />
+                        <Text layoutX="105.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Backup files manually, this will happen immediately." />
+                        <ListView fx:id="adminBackupsListView" layoutX="17.0" layoutY="258.0" onMouseClicked="#adminBackupsListViewClick" prefHeight="163.0" prefWidth="319.0" styleClass="standardListView" />
+                        <Text layoutX="152.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Backups" />
+                        <TextField fx:id="adminBackupSearchTxtBox" layoutX="18.0" layoutY="433.0" onKeyTyped="#adminBackupSearchUpdate" prefHeight="27.0" prefWidth="319.0" promptText="Search Dates..." styleClass="standardTextBox" />
+                        <Line endX="250.00006103515625" layoutX="268.0" layoutY="218.0" startX="-279.0" stroke="WHITE" />
+                        <Button layoutX="355.0" layoutY="325.0" mnemonicParsing="false" onAction="#adminRestoreFromBackupBtnClick" styleClass="standardButton" text="Restore From Backup" />
+                        <Line endX="-38.0" endY="0.5" layoutX="393.0" layoutY="340.0" startX="-57.0" startY="0.5" stroke="WHITE" />
+                        <Line endX="230.0" layoutX="107.0" layoutY="460.0" startX="-89.0" stroke="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="adminSideBarPane" prefHeight="600.0" prefWidth="126.0" styleClass="sideBar" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="8.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LogPro" wrappingWidth="90.93256378173828">
+               <font>
+                  <Font name="Bodoni 72 Oldstyle Book" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="6.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Community Service Tracker" wrappingWidth="135.20958698681875">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="35.0" fitWidth="45.0" layoutX="96.0" layoutY="10.0">
+               <image>
+                  <Image url="@book.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onAction="#helpBtnClick" prefHeight="31.0" prefWidth="113.0" styleClass="standardButton" text="Help" />
+            <Line endX="100.0" layoutX="46.0" layoutY="63.0" startX="-45.0450325012207" startY="-7.62939453125E-6" stroke="WHITE" />
+            <Button layoutX="34.0" layoutY="294.0" mnemonicParsing="false" onAction="#logOutBtnClick" styleClass="standardButton" text="Log Out" />
+            <Button layoutX="14.0" layoutY="136.0" mnemonicParsing="false" onAction="#adminClassroomsBtnClick" prefHeight="31.0" prefWidth="113.0" styleClass="standardButton" text="Classrooms" />
+            <Button layoutX="14.0" layoutY="187.0" mnemonicParsing="false" onAction="#adminManageUsersBtnClick" prefHeight="31.0" prefWidth="113.0" styleClass="standardButton" text="Users" />
+            <Button layoutX="14.0" layoutY="239.0" mnemonicParsing="false" onAction="#adminSettingsBtnClick" prefHeight="31.0" prefWidth="113.0" styleClass="standardButton" text="Settings" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="helpPane" layoutX="218.0" layoutY="108.0" prefHeight="365.0" prefWidth="682.0" styleClass="helpPane" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="44.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Help" textAlignment="CENTER" wrappingWidth="607.5559346987047">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Text>
+            <Button layoutX="25.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitHelpBtnClick" prefHeight="31.0" prefWidth="87.0" styleClass="standardButton" text="Exit" />
+            <Line endX="335.0" layoutX="346.0" layoutY="55.0" startX="-345.0" stroke="WHITE" />
+            <TextField fx:id="helpOpenSearchTxtBox" layoutX="158.0" layoutY="150.0" prefHeight="27.0" prefWidth="334.0" promptText="Ask me something..." style="-fx-border-color: black;" styleClass="standardTextBox" />
+            <Text fill="WHITE" layoutX="336.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Or" />
+            <Button layoutX="280.0" layoutY="255.0" mnemonicParsing="false" onAction="#viewAllSearchesBtnClick" prefHeight="27.0" prefWidth="125.0" style="-fx-border-radius: 360px;" styleClass="standardButton" text="View All" />
+            <Text layoutX="107.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="standardText" text="Have a question? Ask the question below or click &quot;View All&quot; for a list of tips." />
+            <Button layoutX="496.0" layoutY="149.0" mnemonicParsing="false" onAction="#helpGoSearchBtnClick" style="-fx-background-radius: 360px; -fx-border-radius: 360px; -fx-text-fill: lime;" styleClass="standardButton" text="Go!" />
+            <AnchorPane fx:id="helpSearchResultPane" layoutX="12.0" layoutY="60.0" prefHeight="311.0" prefWidth="680.0" styleClass="helpPane" visible="false">
+               <children>
+                  <AnchorPane layoutX="-11.0" layoutY="42.0" prefHeight="271.0" prefWidth="694.0" style="-fx-background-color: #A1C7C8;" styleClass="helpPane">
+                     <children>
+                        <ListView fx:id="helpSearchResultsListView" layoutX="9.0" layoutY="9.0" onMouseClicked="#helpSearchResultListViewClick" prefHeight="253.0" prefWidth="673.0" styleClass="helpSearchResult" />
+                     </children>
+                  </AnchorPane>
+                  <TextField fx:id="helpResultSearchTxtBox" layoutX="115.0" layoutY="6.0" prefHeight="27.0" prefWidth="420.0" promptText="Ask me something..." style="-fx-border-color: black;" styleClass="standardTextBox" />
+                  <Button layoutX="540.0" layoutY="5.0" mnemonicParsing="false" onAction="#helpGoSearchBtnClick" style="-fx-background-radius: 360px; -fx-border-radius: 360px; -fx-text-fill: lime;" styleClass="standardButton" text="Go!" />
+                  <Button layoutX="12.0" layoutY="4.0" mnemonicParsing="false" onAction="#helpBackBtnClick" prefHeight="31.0" prefWidth="88.0" styleClass="standardButton" text="Back" />
+                  <AnchorPane fx:id="helpResultFullViewPane" layoutX="-1.0" prefHeight="305.0" prefWidth="673.0" style="-fx-background-radius: 15px; -fx-border-radius: 15px; -fx-border-color: white;" styleClass="mainBackground" visible="false">
+                     <children>
+                        <Button layoutX="310.0" layoutY="260.0" mnemonicParsing="false" onAction="#helpFullViewOkayBtnClick" styleClass="standardButton" text="Okay" />
+                        <TextArea fx:id="helpResultFullViewAnswerTxtBox" editable="false" layoutX="23.0" layoutY="54.0" prefHeight="188.0" prefWidth="630.0" style="-fx-background-radius: 15px;" />
+                        <TextField fx:id="helpResultFullViewQuestionTxtBox" alignment="CENTER" editable="false" layoutX="26.0" layoutY="10.0" prefHeight="38.0" prefWidth="622.0" styleClass="standardTextBox">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Line endX="319.0" layoutX="332.0" layoutY="48.0" startX="-303.0" stroke="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+   <styleClass>
+      <String fx:value="mainBackground" />
+      <String fx:value="curved" />
+   </styleClass>
+</AnchorPane>

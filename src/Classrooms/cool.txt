@@ -1,0 +1,4 @@
+standardInstructor
+0*Standard Award%3%This is a standard award!
+standardClassmate
+standardStudent
