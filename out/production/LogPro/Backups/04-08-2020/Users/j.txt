@@ -1,5 +1,0 @@
-5c2dd944dde9e08881bef0894fe7b22a5c9c4b06
-false
-null
-Jonathan*Strickland*4
-5.50*Walking A dog*03/09/2020*Jon*jon@gmail.com*I walked dogs for five hours.
