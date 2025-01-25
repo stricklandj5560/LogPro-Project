@@ -1,3 +1,5 @@
+LogPro is an application I developed during my Senior year of high school. I presented this application at the 2020 FBLA national leadership conference and received 3rd place nationwide.
+
 LogPro - Developed By Jonathan Strickland
 
 About LogPro:
